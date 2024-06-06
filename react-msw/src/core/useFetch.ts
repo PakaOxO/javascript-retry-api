@@ -11,8 +11,6 @@ const useFetch = () => {
       setLoading(false);
       setData({});
     }, 2000);
-
-    console.log(url);
   }, []);
 
   return {

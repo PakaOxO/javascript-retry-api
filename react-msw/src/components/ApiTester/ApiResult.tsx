@@ -12,8 +12,6 @@ interface IProps {
 }
 
 const ApiResult: React.FC<IProps> = ({ data }) => {
-  console.log(data);
-
   return <StyledContainer></StyledContainer>;
 };
 
