@@ -9,19 +9,31 @@ const StyledContainer = styled.div`
   width: 240px;
 `;
 
-const ApiTester = () => {
+const StyledTitle = styled.h3`
+  text-align: center;
+`;
+
+interface IProps {
+  title: string;
+  target: string;
+  type: string;
+  retry?: number;
+}
+
+const ApiTester: React.FC<IProps> = ({ title, target, type, retry = 0 }) => {
   const { loading, data, fetch } = useFetch();
 
   useEffect(() => {
-    fetch('');
-  }, [fetch]);
+    fetch(target, type, retry);
+  }, [fetch, type, target, retry]);
 
   const refreshHandler = () => {
-    fetch('');
+    fetch(target, type, retry);
   };
 
   return (
     <StyledContainer>
+      <StyledTitle>{title}</StyledTitle>
       {loading ? <ApiResultSkeleton /> : <ApiResult data={data} />}
       <ApiRefresher onRefresh={refreshHandler} />
     </StyledContainer>
