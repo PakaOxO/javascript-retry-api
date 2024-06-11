@@ -28,6 +28,7 @@ const ApiTester: React.FC<IProps> = ({ title, target, type, retry = 0 }) => {
   }, [fetch, type, target, retry]);
 
   const refreshHandler = () => {
+    if (loading) return;
     fetch(target, type, retry);
   };
 
