@@ -4,3 +4,13 @@
 
 <br>
 
+### 환경설정
+
+**패키지 설치 및 실행**
+
+```bash
+## cd react-msw
+npm i
+npm run start
+```
+
